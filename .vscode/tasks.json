@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Active C++ File",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiles the active C++ file"
+        },
+        {
+            "label": "Run with Input/Output",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.exe < ${fileDirname}/input.txt > ${fileDirname}/output.txt",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "dependsOn": "Build Active C++ File",
+            "detail": "Runs the program with input.txt and stores result in output.txt"
+        }
+    ]
+}

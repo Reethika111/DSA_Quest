@@ -1,0 +1,16 @@
+# Ignore compiled files
+*.exe
+*.out
+*.o
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore input/output test files if not needed
+input.txt
+output.txt
+
+# Ignore system files
+.DS_Store
+Thumbs.db
